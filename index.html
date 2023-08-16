@@ -1,27 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to my Website :)</title>
-  </head>
+<html>
 
-  <style>
-    body {
-        background-image: url(https://media4.giphy.com/media/iY6vTjjGLGD35Itbsm/200.gif);
-    }
+<head>
+    <title>IU Student Run Services</title>
 
-    .centered-image {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-  </style>
-  <body>
+    <!-- Styling -->
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <style>
+        body.dark {
+            --bg-color: #000;
+            --bg-secondary-color: #131316;
+            --font-color: #f5f5f5;
+            --color-grey: #ccc;
+            --color-darkGrey: #777;
+        }
+    </style>
+    <script>
+        if (window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+    </script>
+</head>
 
-<img class="centered-image" src="https://64.media.tumblr.com/dd86ec051142eb2115b87417d43424cc/tumblr_p7pgr1DteG1vpf6ddo1_400.gif"/>   
+<body id="top" class="dark">
+    <div class="container">
+    <header>
+        <!-- <nav class="tabs">
+            <a href="#start">get started</a>
+            <a href="#about">about</a>
+            <a href="https://github.com">github</a>
+          </nav> -->
+        <div class="hero is-full-screen">
+            <div class="logo is-center is-vertical-align">
+                <img src="https://64.media.tumblr.com/dd86ec051142eb2115b87417d43424cc/tumblr_p7pgr1DteG1vpf6ddo1_400.gif" alt="Indiana Univeristy logo" />
+              </div>
+              <div class="row is-center">
+                <div class="col is-center" >
+                    <div class="card is-center" style="border-radius: 16px;">
+                        <nav class="tabs is-center">
+                            <a href="https://www.github.com/callowaysutton/">github</a>
+                            <a href="https://www.linkedin.com/in/callowaysutton/">linkedin</a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">rickroll</a>
+                          </nav>
+                    </div>
+                </div>
+              </div>
+          </div>
+    </header>
+    </div>
 </body>
+
 </html>
