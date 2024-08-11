@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,6 +7,7 @@
     <!-- Styling -->
     <link rel="stylesheet" href="https://unpkg.com/chota@latest">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="obno.css">
     <link rel="icon" type="image/x-icon" href="favicon.svg">
     <style>
         body.dark {
@@ -15,41 +17,66 @@
             --color-grey: #ccc;
             --color-darkGrey: #777;
         }
-    </style>
-    <script>
-        if (window.matchMedia &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
+
+        body {
+            overflow: hidden;
         }
-    </script>
+    </style>
 </head>
 
 <body id="top" class="dark">
     <div class="container">
-    <header>
-        <!-- <nav class="tabs">
-            <a href="#start">get started</a>
-            <a href="#about">about</a>
-            <a href="https://github.com">github</a>
-          </nav> -->
         <div class="hero is-full-screen">
             <div class="logo is-center is-vertical-align">
-                <img src="https://64.media.tumblr.com/dd86ec051142eb2115b87417d43424cc/tumblr_p7pgr1DteG1vpf6ddo1_400.gif" alt="Indiana Univeristy logo" />
-              </div>
-              <div class="row is-center">
-                <div class="col is-center" >
+                <img src="earth.gif" alt="Welcome!" />
+            </div>
+            <div class="row is-center">
+                <div class="col is-center">
                     <div class="card is-center" style="border-radius: 16px;">
                         <nav class="tabs is-center">
-                            <a href="https://www.github.com/callowaysutton/">github</a>
-                            <a href="https://www.linkedin.com/in/callowaysutton/">linkedin</a>
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">rickroll</a>
-                          </nav>
+                            <a href="https://www.github.com/callowaysutton/">GitHub</a>
+                            <a href="https://www.linkedin.com/in/callowaysutton/">LinkedIn</a>
+                            <a href="#contact"
+                                onclick="document.getElementById('boooom').setAttribute('src', 'explode-med.gif');document.querySelector('img').classList.remove('animated', 'twister');">Contact</a>
+                        </nav>
                     </div>
                 </div>
-              </div>
-          </div>
-    </header>
+            </div>
+        </div>
     </div>
+
+    <div id="contact" class="ui--modal explode">
+        <div>
+            <a href="#close" class="material-icons ui--close">Close</a>
+            <h3 class="huge">Contact Me</h3>
+            <p>Contact me about anything! I'm always interested in hearing more about what's going on around tech and
+                its adjacent fields</p>
+            <form action="https://api.postcatch.io/submit/0665500f-b73c-4bb9-9d30-21b63462975c" method="POST">
+                <input type="hidden" name="_next" value="/#contact" />
+                <label for="email">Email</label>
+                <input type="email" name="email" />
+                <label for="message">Message</label>
+                <textarea type="textarea" name="message" cols="50" type="text" style="resize:vertical;"></textarea>
+                <br />
+                <button href="#close" class="ui--button" type="submit">Submit</button>
+                <a href="#close"><button class="ui--button alt" type="button">Cancel</button></a>
+            </form>
+        </div>
+        <div class="bg">
+            <img src="explode-med.gif" id="boooom">
+        </div>
+    </div>
+
+    <script>
+        // Shake the Earth if you dare
+        const earth = document.querySelector('img');
+        earth.addEventListener('click', () => {
+            earth.classList.add('animated', 'twister');
+            setTimeout(() => {
+                earth.classList.remove('animated', 'twister');
+            }, 5000);
+        });
+    </script>
 </body>
 
 </html>
